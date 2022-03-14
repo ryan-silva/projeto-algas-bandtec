@@ -1,11 +1,9 @@
 import time 
 import sys
-import matplotlib.pyplot as plt
+from mysql import insert
 
 def transaction(range):
     tempo_inicial = (time.time())
-    x_points = []
-    y_points = []
 
     lista = []
 
@@ -14,17 +12,14 @@ def transaction(range):
         tempo_append = (time.time())
 
         tempo_final = (tempo_append - tempo_inicial)
-        x_points.append(tempo_final*100)
-        y_points.append(sys.getsizeof(lista))
-
-    print(lista)
-    plt.plot(x_points,y_points)
+        tamanho = sys.getsizeof(lista)
+        values = (tempo_final,tamanho)
+        insert(values)
 
 
-# transaction(range (100000, 600000, 100000))
+
+transaction(range (100000, 600000, 100000))
 transaction(range (1000, 6000, 100))
-# transaction(range (100, 600, 100) )
-# transaction(range (10, 60, 10))
-# transaction(range (1000000, 6000000, 1000000))
-
-plt.show() 
+transaction(range (100, 600, 100) )
+transaction(range (10, 60, 10))
+transaction(range (1000000, 6000000, 1000000))
