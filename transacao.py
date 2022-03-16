@@ -1,6 +1,7 @@
 import time 
 import sys
 from mysql import insert
+from datetime import datetime
 
 def transaction(range):
     tempo_inicial = (time.time())
@@ -13,7 +14,7 @@ def transaction(range):
 
         tempo_final = (tempo_append - tempo_inicial)
         tamanho = sys.getsizeof(lista)
-        values = (tempo_final,tamanho)
+        values = (tempo_final, tamanho, datetime.today())
         insert(values)
 
 

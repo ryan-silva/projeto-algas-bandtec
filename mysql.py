@@ -11,7 +11,7 @@ print(mydb)
 mycursor = mydb.cursor()
 
 def insert(values):
-  sql = "INSERT INTO algas (agTempo, agEspaco) VALUES (%s, %s)"
+  sql = "INSERT INTO algas (agTempo, agEspaco, agData) VALUES (%s, %s, %s)"
 
   mycursor.execute(sql, values)
 
