@@ -1,6 +1,6 @@
 import time 
 import sys
-from mysql import insert
+from banco import insert
 from datetime import datetime
 
 def transaction(range):
