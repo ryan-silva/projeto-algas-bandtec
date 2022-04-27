@@ -26,9 +26,9 @@ def transaction(range):
         insert(values)
 
 print('*_* Menu *_*')
-print('*Por favor selecione um numero')
+print('* Por favor selecione um numero *')
 print('1 - Inserir Dados')
-print('2 -Verificar')
+print('2 - Verificar Dados')
 print('3 - Sair')
  
 while True:
